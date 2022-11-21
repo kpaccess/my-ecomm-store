@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import products from '../products.json'
 
 export default function Home() {
+  console.log(' products ', products)
   return (
     <div className={styles.container}>
       <Head>
@@ -13,45 +15,68 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          The best space jellyfish swag on the web!
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <ul className={styles.grid}>
+          {products?.map((products) => {
+            const { title, description, image, price, id } = products
+            return (
+              <li className={styles.card} key={id}>
+                <a href="https://nextjs.org/docs">
+                  <Image src={image} alt="" width={75} height={75} />
+                  <h2>{title}</h2>
+                  <p>${price}</p>
+                  <p>{description}</p>
+                </a>
+              </li>
+            )
+          })}
+          <li className={styles.card}>
+            <a href="https://nextjs.org/docs">
+              <Image
+                src="/images/spacejelly-combo.jpg"
+                alt=""
+                width={75}
+                height={75}
+              />
+              <h2>Space Jelly Tshirt</h2>
+              <p>
+                Bring Cosmo the space Jellyfish to your wardrobe with this high
+                quality tshirt.
+              </p>
+            </a>
+          </li>
+          <li className={styles.card}>
+            <a href="https://nextjs.org/learn">
+              <Image
+                src="/images/spacejelly-stickers.jpg"
+                alt=""
+                width={75}
+                height={75}
+              />
+              <h2>Space Jelly Stickers</h2>
+              <p>
+                Add some flare to your laptop with a sticker of Cosmo the Space
+                Jellyfish.
+              </p>
+            </a>
+          </li>
+          <li className={styles.card}>
+            <a href="https://github.com/vercel/next.js/tree/canary/examples">
+              <Image
+                src="/images/spacejelly-tshirt.jpg"
+                alt=""
+                width={75}
+                height={75}
+              />
+              <h2>Space Jelly Combo</h2>
+              <p>
+                Show your love for Cosmo with a tshirt and sticker combo pack!
+              </p>
+            </a>
+          </li>
+        </ul>
       </main>
 
       <footer className={styles.footer}>
