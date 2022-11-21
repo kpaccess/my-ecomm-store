@@ -15,7 +15,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          The best space jellyfish swag on the web!
+          The best space jellyfish swag in the universe
         </h1>
 
         <ul className={styles.grid}>
@@ -32,50 +32,6 @@ export default function Home() {
               </li>
             )
           })}
-          <li className={styles.card}>
-            <a href="https://nextjs.org/docs">
-              <Image
-                src="/images/spacejelly-combo.jpg"
-                alt=""
-                width={75}
-                height={75}
-              />
-              <h2>Space Jelly Tshirt</h2>
-              <p>
-                Bring Cosmo the space Jellyfish to your wardrobe with this high
-                quality tshirt.
-              </p>
-            </a>
-          </li>
-          <li className={styles.card}>
-            <a href="https://nextjs.org/learn">
-              <Image
-                src="/images/spacejelly-stickers.jpg"
-                alt=""
-                width={75}
-                height={75}
-              />
-              <h2>Space Jelly Stickers</h2>
-              <p>
-                Add some flare to your laptop with a sticker of Cosmo the Space
-                Jellyfish.
-              </p>
-            </a>
-          </li>
-          <li className={styles.card}>
-            <a href="https://github.com/vercel/next.js/tree/canary/examples">
-              <Image
-                src="/images/spacejelly-tshirt.jpg"
-                alt=""
-                width={75}
-                height={75}
-              />
-              <h2>Space Jelly Combo</h2>
-              <p>
-                Show your love for Cosmo with a tshirt and sticker combo pack!
-              </p>
-            </a>
-          </li>
         </ul>
       </main>
 
